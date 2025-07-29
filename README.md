@@ -1,3 +1,7 @@
+Source : 
+1. https://docs.google.com/document/d/1-Yc8shZdpqEk4nMUwW9gfDwBm3KCZIHZzGKPOZvcQQw/edit?tab=t.0
+2. https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/lessons/installing-the-prerequisites-copy/
+
 # Hyperledger-Fabric-Network-Go-Lang
 **Objective** : To understand and build a small Multi-org based Hyperledger Fabric network 
 
