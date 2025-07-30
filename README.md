@@ -108,7 +108,26 @@ Note : If there is an error while executing the above update command,
 
 - Check the version of Docker : **docker --version**
 
-#### 
+![docker-version](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-version.png)
+
+#### 7. Install Docker Compose
+- Download the current stable release of Docker Compose:
+  **sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose**
+- Apply executable permissions to the binary:  **sudo chmod +x /usr/local/bin/docker-compose**
+- Check the version : **docker-compose --version**
+
+![docker-compose](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-compose.png)
+
+#### 8. Go Language Installation
+- Download Go : **wget https://golang.org/dl/go1.17.6.linux-amd64.tar.gz**
+- Extract the archive : **sudo tar -xvf go1.17.6.linux-amd64.tar.gz**
+- Move the Go binary files to /usr/local : **sudo mv go /usr/local**
+- Add Go binary path to the system PATH :
+  **echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile**
+ 	**source ~/.profile**
+- Verify Go installation : **go version**
+
+![go-version](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-version.png)
 
 # Acknowledgements
 Prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) for the Final year students to experiment on Hyperledger Faric Network in Go Language.
