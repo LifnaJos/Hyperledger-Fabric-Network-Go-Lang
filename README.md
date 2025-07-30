@@ -22,6 +22,10 @@ On the Terminal of Ubuntu 20.04 LTS
 - $ cd Blockchain_HFN
 - $ sudo apt-get update
 
+Note : If there is an error while executing the above update command, 
+- run : **ps aux | grep -E 'apt|dpkg|apt-get'** to list all the lock files
+- run : **sudo fuser -vik -TERM /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend /var/lib/apt/lists/lock** to teminate all the process which are stuck
+
 #### 1. curl
 - Run the command to install Curl : **$ sudo apt-get install curl**
 - Verify the installation and check the version of Curl : **$ curl --version**
@@ -38,6 +42,15 @@ On the Terminal of Ubuntu 20.04 LTS
 - Check the version of nodejs : **$ node --version OR node -v**
 
 #### 3. vscode
+- Install dependencies : **sudo apt install software-properties-common apt-transport-https wget**
+- Import Microsoft GPG key : **wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -**
+- Add the VS Code repository : **sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"**
+- Update package lists again : **sudo apt update**
+- Install VS Code : **sudo apt install code**
+
+![vscode-install]()
+![vscode-install]()
+![vscode-install]()
 
 #### 4. build-essentials
 - Run the command : **sudo apt install build-essential**
