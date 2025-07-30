@@ -138,5 +138,45 @@ Note : If there is an error while executing the above update command,
 
 ![go-version](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-version.png)
 
+## Step 2 : Bootstraping the Network
+Microfab is a containerized Hyperledger Fabric runtime for use in development environments.
+
+#### 1. For running the network, copy the below export command and execute it in a command terminal
+
+**export MICROFAB_CONFIG='{
+"port": 8080,
+"endorsing_organizations":[
+{
+"name": "ProducersOrg"
+},
+{
+"name": "SellersOrg"
+}
+],
+"channels":[
+{
+"name": "mango-channel",
+"endorsing_organizations":[
+"ProducersOrg",
+"SellersOrg"
+]
+}
+]
+}'**
+
+- port: Port on which Microfab container is mapped to run. This configuration file is in JSON format a key-value format.
+- endorsing_organisations: Organisations present in a business network.
+- channels: Name of the channel on which the network is operated.
+
+#### 2. Execute the following command:
+**docker run -e MICROFAB_CONFIG -p 8080:8080 ibmcom/ibp-microfab**
+Now, a runtime docker environment will be running in your terminal. (Let us call this terminal as Terminal-1, and don’t close this terminal window.)
+
+In the Terminal-1 where you ran the network, press Control + C, this stops the container.
+
+To remove the container, the following command can be used,
+
+docker container prune
+
 # Acknowledgements
 Prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) for the Final year students to experiment on Hyperledger Faric Network in Go Language.
