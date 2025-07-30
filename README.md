@@ -20,8 +20,8 @@ Source :
 4. [build-essentials](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#4-build-essentials)
 5. [WEFT Library](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#5-install-weft-library-using-npm)
 6. [Docker Community Edition](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#6-install-docker-ce-community-edition-)
-7. [Docker Compose]()
-
+7. [Docker Compose](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#7-install-docker-compose)
+8. [Go compiler](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#8-go-language-installation)
 
 On the Terminal of Ubuntu 20.04 LTS
 - Current working directory : **pwd**
