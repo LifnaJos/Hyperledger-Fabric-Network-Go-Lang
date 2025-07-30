@@ -14,6 +14,15 @@ Source :
 **Note** : If there are any errors detected, please run the commands suggested on the terminal for troubleshooting.
 
 ## Step 1 : Insallation of Packages
+1. [curl](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#1-curl)
+2. [NodeJS](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#2-nodejs)
+3. [VScode](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#3-vscode)
+4. [build-essentials](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#4-build-essentials)
+5. [WEFT Library](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#5-install-weft-library-using-npm)
+6. [Docker Community Edition](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#6-install-docker-ce-community-edition-)
+7. [Docker Compose]()
+
+
 On the Terminal of Ubuntu 20.04 LTS
 - Current working directory : **pwd**
 - Change the directory : **cd Desktop**
