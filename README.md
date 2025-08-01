@@ -202,6 +202,15 @@ sudo apt-get install \
 
 ![go-version](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-version.png)
 
+#### 9. Add user to the Docker group
+**Note** : 
+- By default, Docker runs as a root-owned service. To manage Docker as a non-root user, your user needs to be part of the docker group. This allows you to run Docker commands without needing sudo.
+1. To add user to docker group: ```sudo usermod -aG docker $USER```
+  - This command appends your user to the docker group, allowing permission to access the Docker daemon files and directories.
+2. Log in to a new group: ```newgrp docker```
+3. Check if your user has docker group membership : ```groups```
+4. Run the docker command : ```docker ps``` to list all the containers without needing root privileges.
+
 ## Step 2 : Bootstraping the Network using IBM Microfab
 Microfab is a containerized Hyperledger Fabric runtime for use in development environments.
 
@@ -292,6 +301,38 @@ export MICROFAB_CONFIG='{
 **Note** : Transactions are visible only to the participating organizations : PRODUCER and SELLER.
   
 ![Network](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Network.png)
+
+## Step 5. Setting Up the Project
+#### Terminal-1 : Run the Network
+**1. Copy the below export command and execute it in a command terminal**
+
+```
+export MICROFAB_CONFIG='{
+"port": 8080,
+"endorsing_organizations":[
+{
+"name": "ProducersOrg"
+},
+{
+"name": "SellersOrg"
+}
+],
+"channels":[
+{
+"name": "mango-channel",
+"endorsing_organizations":[
+"ProducersOrg",
+"SellersOrg"
+]
+}
+]
+}'
+```
+![Config](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/config.png)
+
+**2. Run the runtime docker environment :**
+
+  ```docker run -e MICROFAB_CONFIG -p 8080:8080 ibmcom/ibp-microfab```
 
 
 ![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
