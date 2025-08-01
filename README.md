@@ -255,8 +255,6 @@ export MICROFAB_CONFIG='{
 
 ![microfab-0](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-0.png)
 
-![run-microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-1.png)
-
 ![run-microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-2.png)
 
 ![run-microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-3.png)
@@ -306,7 +304,7 @@ export MICROFAB_CONFIG='{
 ![Network](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Network.png)
 
 ## Step 5. Setting Up the Project
-#### Terminal-1 : Run the Network
+### Terminal-1 : Run the Network
 **1. Copy the below export command and execute it in a command terminal**
 
 ```
@@ -337,5 +335,15 @@ export MICROFAB_CONFIG='{
 
   ```docker run -e MICROFAB_CONFIG -p 8080:8080 ibmcom/ibp-microfab```
 
+![run-microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-3.png)
+
+### Terminal-2 : Run the Project
+1. Create a folder :  ```mkdir HFN-Mango```
+2. Change the directory : ```cd HFN-Mango```
+3. Generate Certificates, wallet and gateway connection profile
+
+```
+curl -s http://console.127-0-0-1.nip.io:8080/ak/api/v1/components | weft microfab -w ./_wallets -p ./_gateways -m ./_msp -f
+```
 
 ![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
