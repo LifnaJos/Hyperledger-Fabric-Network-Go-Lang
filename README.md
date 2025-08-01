@@ -53,7 +53,7 @@ Note : If there is an error while executing the above update command,
 ![nodejs-install](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/nodejs-1.png)
 
 - Start the installation for NodeJs :
-  ```$ sudo apt-get install -y nodejs```
+  ```sudo apt-get install -y nodejs```
   OR
   ```sudo apt install nodejs```
 
@@ -140,7 +140,7 @@ Note : If there is an error while executing the above update command,
 
 ![go-version](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-version.png)
 
-## Step 2 : Bootstraping the Network
+## Step 2 : Bootstraping the Network using IBM Microfab
 Microfab is a containerized Hyperledger Fabric runtime for use in development environments.
 
 #### 1. For running the network, copy the below export command and execute it in a command terminal
@@ -173,14 +173,9 @@ export MICROFAB_CONFIG='{
 - channels: Name of the channel on which the network is operated.
 
 #### 2. Execute the following command:
-```docker run -e MICROFAB_CONFIG -p 8080:8080 ibmcom/ibp-microfab```
-Now, a runtime docker environment will be running in your terminal. (Let us call this terminal as Terminal-1, and don’t close this terminal window.)
-
-In the Terminal-1 where you ran the network, press Control + C, this stops the container.
-
-To remove the container, the following command can be used,
-
-```docker container prune```
+- To run the runtime docker environment : ```docker run -e MICROFAB_CONFIG -p 8080:8080 ibmcom/ibp-microfab```
+- To stop the container : Press ```Control + C```
+- To remove the container : ```docker container prune```
 
 # Acknowledgements
 Prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) for the Final year students to experiment on Hyperledger Faric Network in Go Language.
