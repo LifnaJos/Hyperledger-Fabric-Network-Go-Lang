@@ -363,24 +363,32 @@ curl -s http://console.127-0-0-1.nip.io:8080/ak/api/v1/components | weft microfa
 
 **Note :** Environment variables: 
 - For producersorgadmin @  ProducersOrg use these:
--   export CORE_PEER_LOCALMSPID=ProducersOrgMSP
--   export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/ProducersOrg/producersorgadmin/msp
--   export CORE_PEER_ADDRESS=producersorgpeer-api.127-0-0-1.nip.io:8080
+```
+export CORE_PEER_LOCALMSPID=ProducersOrgMSP
+export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/ProducersOrg/producersorgadmin/msp
+export CORE_PEER_ADDRESS=producersorgpeer-api.127-0-0-1.nip.io:8080
+```
 
 - For producersorgcaadmin @  ProducersOrg use these:
--   export CORE_PEER_LOCALMSPID=ProducersOrgMSP
--   export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/ProducersOrg/producersorgcaadmin/msp
--   export CORE_PEER_ADDRESS=producersorgpeer-api.127-0-0-1.nip.io:8080
+```
+export CORE_PEER_LOCALMSPID=ProducersOrgMSP
+export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/ProducersOrg/producersorgcaadmin/msp
+export CORE_PEER_ADDRESS=producersorgpeer-api.127-0-0-1.nip.io:8080
+```
 
 - For sellersorgadmin @  SellersOrg use these:
--   export CORE_PEER_LOCALMSPID=SellersOrgMSP
--   export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/SellersOrg/sellersorgadmin/msp
--   export CORE_PEER_ADDRESS=sellersorgpeer-api.127-0-0-1.nip.io:8080
+```
+export CORE_PEER_LOCALMSPID=SellersOrgMSP
+export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/SellersOrg/sellersorgadmin/msp
+export CORE_PEER_ADDRESS=sellersorgpeer-api.127-0-0-1.nip.io:8080
+```
 
 - For sellersorgcaadmin @  SellersOrg use these:
--   export CORE_PEER_LOCALMSPID=SellersOrgMSP
--   export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/SellersOrg/sellersorgcaadmin/msp
--   export CORE_PEER_ADDRESS=sellersorgpeer-api.127-0-0-1.nip.io:8080
+```
+export CORE_PEER_LOCALMSPID=SellersOrgMSP
+export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/SellersOrg/sellersorgcaadmin/msp
+export CORE_PEER_ADDRESS=sellersorgpeer-api.127-0-0-1.nip.io:8080
+```
 
 **4. Set the environment variables for Producer Organization**
 - Copy the export commands for ‘producersorgadmin @ ProducersOrg’
