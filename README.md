@@ -7,7 +7,7 @@ Source :
 - To understand and build a small Multi-org based Hyperledger Fabric network in Go Lang
 
 
-## Acknowledgements
+#### Acknowledgements
 This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Honor-Minor Degree Course / Semester 7 Lab) offered by Department of Computer Engineering to the Final year students of VES Institute of Technology, Mumbai (An Autonomous Institute, Affiliated with the University of Mumbai)) during the Academic Year 2025-26. The content is prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) 
 
 ## Step 0 : Hardware Prerequisites
