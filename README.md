@@ -8,7 +8,7 @@ Source :
 
 
 ## Acknowledgements
-This Github repo, is prepared as a part of Blockchain Setup Lab offered to the Final year students of VES Institute of Technology during the Academic Year 2025-26. The content is prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) 
+This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Honor-Minor Degree Course / Semester 7 Lab) offered by Department of Computer Engineering to the Final year students of VES Institute of Technology during the Academic Year 2025-26. The content is prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) 
 
 ## Step 0 : Hardware Prerequisites
 - Operating System: Ubuntu 20.04 or higher
@@ -237,6 +237,12 @@ export MICROFAB_CONFIG='{
   ```docker run -e MICROFAB_CONFIG -p 8080:8080 ibmcom/ibp-microfab```
 
 ![run-microfab-docker](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab.png)
+
+![run-microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-1.png)
+
+![run-microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-2.png)
+
+![run-microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-3.png)
   
 - To stop the container : Press ```Control + C```
 - To remove the container : ```docker container prune```
