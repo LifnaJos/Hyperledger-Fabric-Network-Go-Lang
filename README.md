@@ -3,12 +3,17 @@ Source :
 2. https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/lessons/installing-the-prerequisites-copy/
 
 # Hyperledger-Fabric-Network-Go-Lang
-**Objective** : 
-- To understand and build a small Multi-org based Hyperledger Fabric network in Go Lang
-
-
 #### Acknowledgements
 This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Honor-Minor Degree Course / Semester 7 Lab) offered by Department of Computer Engineering to the Final year students of VES Institute of Technology, Mumbai (An Autonomous Institute, Affiliated with the University of Mumbai)) during the Academic Year 2025-26. The content is prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) 
+
+## **Objective** : 
+- To understand and build a small Multi-org based Hyperledger Fabric network in Go Lang
+## Contents
+0. [Hardware Pre-requisites]()
+1. [Insallation of Packages]()
+2. [Bootstraping the Network using IBM Microfab]()
+3. [Understanding Key Terminologies]()
+4. [Use-Case Scenario : To trace mangoes]()
 
 ## Step 0 : Hardware Prerequisites
 - Operating System: Ubuntu 20.04 or higher
@@ -252,26 +257,7 @@ export MICROFAB_CONFIG='{
 
 ![docker-prune](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-prune.png)
 
-#### 4. Use-Case : Mango Chain
-- **Scenario** : To trace mangoes. 
-- **Organizations** : PRODUCER and SELLER.
-- **Channel** : Mango Channel
-- **Asset** : mango (transferred from PRODUCER to SELLER).
-  - attributes of Mango : ID, batchNumber, producer, ownedBy (default = producer), price, quantity.
-- **Chain** : MangoChain (records all transactions in ledger)
-- **Functions**: 
-  1. Create-mango : To set asset properties : ID, batchNumber, producer, ownedBy, price, and quantity.
-  2. Exist-mango : To check the existence of the mango by providing the ID  (to avoid the duplication of records).
-  3. Read-mango : To view mango details.
-  4. Update-mango : To update mango details.
-  5. Delete-mango : To delete the mango details from the state.
-  6. Sell-mango : To sell mango (change the ownership to the buyer).
-
-**Note** : Transactions are visible only to the participating organizations : PRODUCER and SELLER.
-  
-![Network](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Network.png)
-
-#### 5. Key Terminology
+## Step 3 : Understanding Key Terminologies
 1. **Asset** : any given entity that we transfer during a transaction.
 2. **Transaction** : an exchange of goods or services between two individuals. It consists of an asset, a set of participants, and the logic of that transaction. 
 3. **State** : current condition of a given asset.
@@ -290,3 +276,23 @@ export MICROFAB_CONFIG='{
   3. DeleteState : to remove the asset.
    
 ![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
+
+## Step 4. Use-Case Scenario : To trace mangoes. 
+- **Organizations** : PRODUCER and SELLER.
+- **Channel** : Mango Channel
+- **Asset** : mango (transferred from PRODUCER to SELLER).
+  - attributes of Mango : ID, batchNumber, producer, ownedBy (default = producer), price, quantity.
+- **Chain** : MangoChain (records all transactions in ledger)
+- **Functions**: 
+  1. Create-mango : To set asset properties : ID, batchNumber, producer, ownedBy, price, and quantity.
+  2. Exist-mango : To check the existence of the mango by providing the ID  (to avoid the duplication of records).
+  3. Read-mango : To view mango details.
+  4. Update-mango : To update mango details.
+  5. Delete-mango : To delete the mango details from the state.
+  6. Sell-mango : To sell mango (change the ownership to the buyer).
+
+**Note** : Transactions are visible only to the participating organizations : PRODUCER and SELLER.
+  
+![Network](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Network.png)
+
+
