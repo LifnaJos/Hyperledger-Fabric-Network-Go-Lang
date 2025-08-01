@@ -3,7 +3,12 @@ Source :
 2. https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/lessons/installing-the-prerequisites-copy/
 
 # Hyperledger-Fabric-Network-Go-Lang
-**Objective** : To understand and build a small Multi-org based Hyperledger Fabric network 
+**Objective** : 
+- To understand and build a small Multi-org based Hyperledger Fabric network in Go Lang
+
+
+## Acknowledgements
+This Github repo, is prepared as a part of Blockchain Setup Lab offered to the Final year students of VES Institute of Technology during the Academic Year 2025-26. The content is prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) 
 
 ## Step 0 : Hardware Prerequisites
 - Operating System: Ubuntu 20.04 or higher
@@ -224,10 +229,21 @@ export MICROFAB_CONFIG='{
 - endorsing_organisations: Organisations present in a business network.
 - channels: Name of the channel on which the network is operated.
 
+![Config](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/config.png)
+
 #### 2. Execute the following command:
-- To run the runtime docker environment : ```docker run -e MICROFAB_CONFIG -p 8080:8080 ibmcom/ibp-microfab```
+- To run the runtime docker environment :
+
+  ```docker run -e MICROFAB_CONFIG -p 8080:8080 ibmcom/ibp-microfab```
+
+![run-microfab-docker](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab.png)
+  
 - To stop the container : Press ```Control + C```
 - To remove the container : ```docker container prune```
 
-# Acknowledgements
-Prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) for the Final year students to experiment on Hyperledger Faric Network in Go Language.
+
+#### 4. Use-Case : Mango Chain
+
+![Network](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Network.png)
+
+![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
