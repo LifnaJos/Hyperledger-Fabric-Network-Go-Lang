@@ -294,6 +294,18 @@ export MICROFAB_CONFIG='{
   1. PutState : to create an asset in the Fabric ledger.
   2. GetState : to retrieve an already stored state variable from the ledger.
   3. DeleteState : to remove the asset.
+
+**Lifecycle of a Chaincode**
+
+1. Package the chaincode
+2. Install the chaincode on the peers
+3. Approve the chaincode definition
+4. Commit the chaincode definition
+
+**Transaction Flow in Hyperledger**
+
+![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
+
    
 ## Step 4. Use-Case Scenario : To trace mangoes 
 - **Organizations** : PRODUCER and SELLER.
@@ -544,4 +556,3 @@ func main() {
 
 =========================================
 
-![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
