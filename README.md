@@ -210,7 +210,7 @@ sudo apt-get install \
 ![go-version](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-version.png)
 
 #### 9. Add user to the Docker group
-- [Source](https://www.hostinger.com/in/tutorials/how-to-fix-docker-permission-denied-error?utm_campaign=Generic-Tutorials-DSA|NT:Se|LO:IN-t2&utm_medium=ppc&gad_source=1&gad_campaignid=18585456941&gclid=CjwKCAjwqKzEBhANEiwAeQaPVeT-1umqXqnV0eS0d488_XewDerLLVviCI1kHjxQt_hrGfAU4-fg9hoCwnEQAvD_BwE)
+- [Source : How to fix the permission denied error in Docker](https://www.hostinger.com/in/tutorials/how-to-fix-docker-permission-denied-error?utm_campaign=Generic-Tutorials-DSA|NT:Se|LO:IN-t2&utm_medium=ppc&gad_source=1&gad_campaignid=18585456941&gclid=CjwKCAjwqKzEBhANEiwAeQaPVeT-1umqXqnV0eS0d488_XewDerLLVviCI1kHjxQt_hrGfAU4-fg9hoCwnEQAvD_BwE)
 
 **Note** : 
 - By default, Docker runs as a root-owned service. To manage Docker as a non-root user, your user needs to be part of the docker group. This allows you to run Docker commands without needing sudo.
@@ -348,9 +348,9 @@ export MICROFAB_CONFIG='{
 ![run-microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-3.png)
 
 ### Terminal-2 : Run the Project
-1. Create a folder :  ```mkdir HFN-Mango```
-2. Change the directory : ```cd HFN-Mango```
-3. Generate Certificates, wallet and gateway connection profile
+**1. Create a folder :**  ```mkdir HFN-Mango```
+**2. Change the directory :** ```cd HFN-Mango```
+**3. Generate Certificates, wallet and gateway connection profile :**
 
 ```
 curl -s http://console.127-0-0-1.nip.io:8080/ak/api/v1/components | weft microfab -w ./_wallets -p ./_gateways -m ./_msp -f
@@ -363,29 +363,48 @@ curl -s http://console.127-0-0-1.nip.io:8080/ak/api/v1/components | weft microfa
 
 **Note :** Environment variables: 
 - For producersorgadmin @  ProducersOrg use these:
- -- export CORE_PEER_LOCALMSPID=ProducersOrgMSP
- -- export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/ProducersOrg/producersorgadmin/msp
- -- export CORE_PEER_ADDRESS=producersorgpeer-api.127-0-0-1.nip.io:8080
+-   export CORE_PEER_LOCALMSPID=ProducersOrgMSP
+-   export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/ProducersOrg/producersorgadmin/msp
+-   export CORE_PEER_ADDRESS=producersorgpeer-api.127-0-0-1.nip.io:8080
 
 - For producersorgcaadmin @  ProducersOrg use these:
-  -- export CORE_PEER_LOCALMSPID=ProducersOrgMSP
-  -- export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/ProducersOrg/producersorgcaadmin/msp
-  -- export CORE_PEER_ADDRESS=producersorgpeer-api.127-0-0-1.nip.io:8080
+-   export CORE_PEER_LOCALMSPID=ProducersOrgMSP
+-   export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/ProducersOrg/producersorgcaadmin/msp
+-   export CORE_PEER_ADDRESS=producersorgpeer-api.127-0-0-1.nip.io:8080
 
 - For sellersorgadmin @  SellersOrg use these:
-  -- export CORE_PEER_LOCALMSPID=SellersOrgMSP
-  -- export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/SellersOrg/sellersorgadmin/msp
-  -- export CORE_PEER_ADDRESS=sellersorgpeer-api.127-0-0-1.nip.io:8080
+-   export CORE_PEER_LOCALMSPID=SellersOrgMSP
+-   export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/SellersOrg/sellersorgadmin/msp
+-   export CORE_PEER_ADDRESS=sellersorgpeer-api.127-0-0-1.nip.io:8080
 
 - For sellersorgcaadmin @  SellersOrg use these:
-  -- export CORE_PEER_LOCALMSPID=SellersOrgMSP
-  -- export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/SellersOrg/sellersorgcaadmin/msp
-  -- export CORE_PEER_ADDRESS=sellersorgpeer-api.127-0-0-1.nip.io:8080
+-   export CORE_PEER_LOCALMSPID=SellersOrgMSP
+-   export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp/SellersOrg/sellersorgcaadmin/msp
+-   export CORE_PEER_ADDRESS=sellersorgpeer-api.127-0-0-1.nip.io:8080
 
-4. Copy the export commands for setting the environment variables for ‘producersorgadmin @ ProducersOrg’ and execute them in the terminal.
+**4. Set the environment variables for Producer Organization**
+- Copy the export commands for ‘producersorgadmin @ ProducersOrg’
+- Execute them in the terminal.
 
 ![pro-cmd](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/pro-cmd.png)
    
+**5. Install Binaries for handling Cahincode Lifecycle**
+```
+curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/install-fabric.sh | bash -s -- binary
+```
+
+![binary-1](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/binary-1.png)
+
+![binary-2](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/binary-2.png)
+
+**6. Add the path of the bin and config folders to the environment variables.**
+```
+export PATH=$PATH:${PWD}/bin
+export FABRIC_CFG_PATH=${PWD}/config
+```
+![path](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/path.png)
+
+
 
 =========================================
 
