@@ -204,6 +204,8 @@ sudo apt-get install \
 ![go-version](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-version.png)
 
 #### 9. Add user to the Docker group
+- [Source](https://www.hostinger.com/in/tutorials/how-to-fix-docker-permission-denied-error?utm_campaign=Generic-Tutorials-DSA|NT:Se|LO:IN-t2&utm_medium=ppc&gad_source=1&gad_campaignid=18585456941&gclid=CjwKCAjwqKzEBhANEiwAeQaPVeT-1umqXqnV0eS0d488_XewDerLLVviCI1kHjxQt_hrGfAU4-fg9hoCwnEQAvD_BwE)
+
 **Note** : 
 - By default, Docker runs as a root-owned service. To manage Docker as a non-root user, your user needs to be part of the docker group. This allows you to run Docker commands without needing sudo.
 1. To add user to docker group: ```sudo usermod -aG docker $USER```
@@ -347,5 +349,11 @@ export MICROFAB_CONFIG='{
 ```
 curl -s http://console.127-0-0-1.nip.io:8080/ak/api/v1/components | weft microfab -w ./_wallets -p ./_gateways -m ./_msp -f
 ```
+![ca](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/folder-hfn-mango.png)
+
+![ca](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/ca-wallet-gateway-0.png)
+
+![ca](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/ca-wallet-gateway-2.png)
+
 
 ![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
