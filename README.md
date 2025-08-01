@@ -245,8 +245,12 @@ export MICROFAB_CONFIG='{
 ![run-microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-3.png)
   
 - To stop the container : Press ```Control + C```
+
+![stop](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-stop.png)
+  
 - To remove the container : ```docker container prune```
 
+![docker-prune](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-prune.png)
 
 #### 4. Use-Case : Mango Chain
 
