@@ -253,13 +253,13 @@ export MICROFAB_CONFIG='{
 ![docker-prune](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-prune.png)
 
 #### 4. Use-Case : Mango Chain
-- Scenario : To trace mangoes. 
-- Organizations involved : PRODUCER and SELLER.
-- Channel : Mango Channel
-- Asset : mango (transferred from PRODUCER to SELLER).
+- **Scenario** : To trace mangoes. 
+- **Organizations** : PRODUCER and SELLER.
+- **Channel** : Mango Channel
+- **Asset** : mango (transferred from PRODUCER to SELLER).
   - attributes of Mango : ID, batchNumber, producer, ownedBy (default = producer), price, quantity.
-- Chain : MangoChain (records all transactions in ledger)
-- Functions: 
+- **Chain** : MangoChain (records all transactions in ledger)
+- **Functions**: 
   1. Create-mango : To set asset properties : ID, batchNumber, producer, ownedBy, price, and quantity.
   2. Exist-mango : To check the existence of the mango by providing the ID  (to avoid the duplication of records).
   3. Read-mango : To view mango details.
@@ -267,10 +267,26 @@ export MICROFAB_CONFIG='{
   5. Delete-mango : To delete the mango details from the state.
   6. Sell-mango : To sell mango (change the ownership to the buyer).
 
-Note : 
-- Transactions happening in the channel are visible only to the participating organizations PRODUCER and SELLER.
-- While selling the mangoes, the ownership is transfered to the buyer.
+**Note** : Transactions are visible only to the participating organizations : PRODUCER and SELLER.
   
 ![Network](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Network.png)
 
+#### 5. Key Terminology
+1. **Asset** : any given entity that we transfer during a transaction.
+2. **Transaction** : an exchange of goods or services between two individuals. It consists of an asset, a set of participants, and the logic of that transaction. 
+3. **State** : current condition of a given asset.
+4. **Ledger** : the immutable storage of transactions as records as well as saving the current state of an asset.
+5. **World State** : used for keeping the state. Implemented using LevelDB / CouchDB which stores data as key-value pairs. (Hyperledger Fabric uses LevelDB).
+6. **Smart Contract** : the code that defines the agreements or rules of a transaction.
+7. **Chaincode** : a group of similar Smart Contracts. It encapsulates Smart Contracts into a single unit.
+
+**Fabric Contract API** in Golang 
+- essential tool for developers for building applications on top of the Hyperledger Fabric
+- provides a set of functions to interact with the blockchain network.
+- provides a convenient and secure way to write and deploy chaincode on the Fabric network.
+- Commonly used methods:
+  1. PutState : to create an asset in the Fabric ledger.
+  2. GetState : to retrieve an already stored state variable from the ledger.
+  3. DeleteState : to remove the asset.
+   
 ![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
