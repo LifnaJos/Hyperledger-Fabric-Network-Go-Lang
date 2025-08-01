@@ -9,11 +9,11 @@ This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Hono
 ## **Objective** : 
 - To understand and build a small Multi-org based Hyperledger Fabric network in Go Lang
 ## Contents
-0. [Hardware Pre-requisites]()
-1. [Insallation of Packages]()
-2. [Bootstraping the Network using IBM Microfab]()
-3. [Understanding Key Terminologies]()
-4. [Use-Case Scenario : To trace mangoes]()
+0. [Hardware Pre-requisites](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#step-0--hardware-prerequisites)
+1. [Insallation of Packages](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#step-1--insallation-of-packages)
+2. [Bootstraping the Network using IBM Microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#step-2--bootstraping-the-network-using-ibm-microfab)
+3. [Understanding Key Terminologies](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#step-3--understanding-key-terminologies)
+4. [Use-Case Scenario : To trace mangoes](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#step-4-use-case-scenario--to-trace-mangoes)
 
 ## Step 0 : Hardware Prerequisites
 - Operating System: Ubuntu 20.04 or higher
@@ -275,9 +275,7 @@ export MICROFAB_CONFIG='{
   2. GetState : to retrieve an already stored state variable from the ledger.
   3. DeleteState : to remove the asset.
    
-![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
-
-## Step 4. Use-Case Scenario : To trace mangoes. 
+## Step 4. Use-Case Scenario : To trace mangoes 
 - **Organizations** : PRODUCER and SELLER.
 - **Channel** : Mango Channel
 - **Asset** : mango (transferred from PRODUCER to SELLER).
@@ -296,3 +294,4 @@ export MICROFAB_CONFIG='{
 ![Network](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Network.png)
 
 
+![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
