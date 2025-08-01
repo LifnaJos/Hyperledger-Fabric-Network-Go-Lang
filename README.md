@@ -32,6 +32,7 @@ This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Hono
 6. [Docker Community Edition](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#6-install-docker-ce-community-edition-)
 7. [Docker Compose](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#7-install-docker-compose)
 8. [Go compiler](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#8-go-language-installation)
+9. [Add user to the Docker group](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#9-add-user-to-the-docker-group)
 
 On the Terminal of Ubuntu 20.04 LTS
 - Current working directory : ```pwd```
@@ -251,6 +252,8 @@ export MICROFAB_CONFIG='{
   ```docker run -e MICROFAB_CONFIG -p 8080:8080 ibmcom/ibp-microfab```
 
 ![run-microfab-docker](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab.png)
+
+![microfab-0](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-0.png)
 
 ![run-microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-1.png)
 
