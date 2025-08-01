@@ -35,7 +35,10 @@ On the Terminal of Ubuntu 20.04 LTS
 
 Note : If there is an error while executing the above update command, 
 - To list all the lock files : ```ps aux | grep -E 'apt|dpkg|apt-get'```
-- To teminate all the process which are stuck : ```sudo fuser -vik -TERM /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend /var/lib/apt/lists/lock```
+- To teminate all the process which are stuck :
+  ```
+  sudo fuser -vik -TERM /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend /var/lib/apt/lists/lock
+  ```
 
 #### 1. curl
 - Run the command to install Curl : ```sudo apt-get install curl```
@@ -48,7 +51,8 @@ Note : If there is an error while executing the above update command,
   
 #### 2. NodeJS
 - Remove old version : ```sudo apt-get remove nodejs | sudo apt-get autoremove```
-- Run the command to download and execute the nodejs file : ```curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -```
+- Run the command to download and execute the nodejs file :
+  ```curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -```
 
 ![nodejs-install](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/nodejs-1.png)
 
@@ -69,9 +73,12 @@ Note : If there is an error while executing the above update command,
   
 
 #### 3. vscode
-- Install dependencies : ```sudo apt install software-properties-common apt-transport-https wget```
-- Import Microsoft GPG key : ```wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -```
-- Add the VS Code repository : ```sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"```
+- Install dependencies :
+  ```sudo apt install software-properties-common apt-transport-https wget```
+- Import Microsoft GPG key :
+  ```wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -```
+- Add the VS Code repository :
+  ```sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"```
 
 ![vscode-install](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/vscode-install.png)
 
@@ -104,11 +111,13 @@ Note : If there is an error while executing the above update command,
     lsb-release
 ```
 - Add Docker’s official GPG key:
-  ```curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg```
+- ```curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg```
 - Set up the stable repository:
-  ```echo \
+  ```
+  echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null```
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  ```
 - Update the apt package index, and install the latest version of Docker CE:
   ```sudo apt-get update```
   ```sudo apt-get install docker-ce docker-ce-cli containerd.io```
