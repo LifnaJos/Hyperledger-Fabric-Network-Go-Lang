@@ -8,7 +8,7 @@ Source :
 
 
 ## Acknowledgements
-This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Honor-Minor Degree Course / Semester 7 Lab) offered by Department of Computer Engineering to the Final year students of VES Institute of Technology during the Academic Year 2025-26. The content is prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) 
+This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Honor-Minor Degree Course / Semester 7 Lab) offered by Department of Computer Engineering to the Final year students of VES Institute of Technology, Mumbai (An Autonomous Institute, Affiliated with the University of Mumbai)) during the Academic Year 2025-26. The content is prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) 
 
 ## Step 0 : Hardware Prerequisites
 - Operating System: Ubuntu 20.04 or higher
@@ -253,7 +253,24 @@ export MICROFAB_CONFIG='{
 ![docker-prune](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-prune.png)
 
 #### 4. Use-Case : Mango Chain
+- Scenario : To trace mangoes. 
+- Organizations involved : PRODUCER and SELLER.
+- Channel : Mango Channel
+- Asset : mango (transferred from PRODUCER to SELLER).
+  - attributes of Mango : ID, batchNumber, producer, ownedBy (default = producer), price, quantity.
+- Chain : MangoChain (records all transactions in ledger)
+- Functions: 
+  1. Create-mango : To set asset properties : ID, batchNumber, producer, ownedBy, price, and quantity.
+  2. Exist-mango : To check the existence of the mango by providing the ID  (to avoid the duplication of records).
+  3. Read-mango : To view mango details.
+  4. Update-mango : To update mango details.
+  5. Delete-mango : To delete the mango details from the state.
+  6. Sell-mango : To sell mango (change the ownership to the buyer).
 
+Note : 
+- Transactions happening in the channel are visible only to the participating organizations PRODUCER and SELLER.
+- While selling the mangoes, the ownership is transfered to the buyer.
+  
 ![Network](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Network.png)
 
 ![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
