@@ -104,39 +104,39 @@ Note : If there is an error while executing the above update command,
     lsb-release
 ```
 - Add Docker’s official GPG key:
-  **curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg**
+  ```curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg```
 - Set up the stable repository:
-  **echo \
+  ```echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null**
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null```
 - Update the apt package index, and install the latest version of Docker CE:
-  **sudo apt-get update**
-  **sudo apt-get install docker-ce docker-ce-cli containerd.io**
+  ```sudo apt-get update```
+  ```sudo apt-get install docker-ce docker-ce-cli containerd.io```
 - Verify that Docker CE is installed correctly:
-  **sudo docker run hello-world**
+  ```sudo docker run hello-world```
 
 ![hello](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-hello.png)
 
-- Check the version of Docker : **docker --version**
+- Check the version of Docker : ```docker --version```
 
 ![docker-version](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-version.png)
 
 #### 7. Install Docker Compose
 - Download the current stable release of Docker Compose:
-  **sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose**
-- Apply executable permissions to the binary:  **sudo chmod +x /usr/local/bin/docker-compose**
-- Check the version : **docker-compose --version**
+```sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose```
+- Apply executable permissions to the binary:  ```sudo chmod +x /usr/local/bin/docker-compose```
+- Check the version : ```docker-compose --version```
 
 ![docker-compose](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-compose.png)
 
 #### 8. Go Language Installation
-- Download Go : **wget https://golang.org/dl/go1.17.6.linux-amd64.tar.gz**
-- Extract the archive : **sudo tar -xvf go1.17.6.linux-amd64.tar.gz**
-- Move the Go binary files to /usr/local : **sudo mv go /usr/local**
+- Download Go : ```wget https://golang.org/dl/go1.17.6.linux-amd64.tar.gz```
+- Extract the archive : ```sudo tar -xvf go1.17.6.linux-amd64.tar.gz```
+- Move the Go binary files to /usr/local : ```sudo mv go /usr/local```
 - Add Go binary path to the system PATH :
-  **echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile**
- 	**source ~/.profile**
-- Verify Go installation : **go version**
+  ```echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile```
+ 	```source ~/.profile```
+- Verify Go installation : ```go version```
 
 ![go-version](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-version.png)
 
@@ -145,7 +145,8 @@ Microfab is a containerized Hyperledger Fabric runtime for use in development en
 
 #### 1. For running the network, copy the below export command and execute it in a command terminal
 
-**export MICROFAB_CONFIG='{
+```
+export MICROFAB_CONFIG='{
 "port": 8080,
 "endorsing_organizations":[
 {
@@ -164,21 +165,22 @@ Microfab is a containerized Hyperledger Fabric runtime for use in development en
 ]
 }
 ]
-}'**
+}'
+```
 
 - port: Port on which Microfab container is mapped to run. This configuration file is in JSON format a key-value format.
 - endorsing_organisations: Organisations present in a business network.
 - channels: Name of the channel on which the network is operated.
 
 #### 2. Execute the following command:
-**docker run -e MICROFAB_CONFIG -p 8080:8080 ibmcom/ibp-microfab**
+```docker run -e MICROFAB_CONFIG -p 8080:8080 ibmcom/ibp-microfab```
 Now, a runtime docker environment will be running in your terminal. (Let us call this terminal as Terminal-1, and don’t close this terminal window.)
 
 In the Terminal-1 where you ran the network, press Control + C, this stops the container.
 
 To remove the container, the following command can be used,
 
-docker container prune
+```docker container prune```
 
 # Acknowledgements
 Prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) for the Final year students to experiment on Hyperledger Faric Network in Go Language.
