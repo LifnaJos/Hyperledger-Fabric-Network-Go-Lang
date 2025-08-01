@@ -121,6 +121,8 @@ Note : If there is an error while executing the above update command,
 
 #### 5. Install WEFT Library using npm
 ``` curl -sSL https://raw.githubusercontent.com/hyperledger-labs/weft/main/install.sh | sh```
+OR
+```npm install -g @hyperledgendary/weftility ```
 
 #### 6. Install Docker CE (Community Edition )
 - Remove old versions of docker :
