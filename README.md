@@ -36,6 +36,7 @@ On the Terminal of Ubuntu 20.04 LTS
 Note : If there is an error while executing the above update command, 
 - To list all the lock files : ```ps aux | grep -E 'apt|dpkg|apt-get'```
 - To teminate all the process which are stuck :
+  
   ```
   sudo fuser -vik -TERM /var/lib/dpkg/lock /var/lib/dpkg/lock-frontend /var/lib/apt/lists/lock
   ```
@@ -51,19 +52,25 @@ Note : If there is an error while executing the above update command,
   
 #### 2. NodeJS
 - Remove old version : ```sudo apt-get remove nodejs | sudo apt-get autoremove```
+  
 - Run the command to download and execute the nodejs file :
+
   ```curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -```
 
 ![nodejs-install](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/nodejs-1.png)
 
 - Start the installation for NodeJs :
+
   ```sudo apt-get install -y nodejs```
   OR
   ```sudo apt install nodejs```
 
 ![nodejs-install](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/nodejs-2.png)
 
-- Check the version of nodejs : ```node --version``` OR ```node -v```
+- Check the version of nodejs :
+  ```node --version```
+  OR
+  ```node -v```
 
 ![nodejs-install](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/nodejs-3.png)
 
@@ -74,12 +81,17 @@ Note : If there is an error while executing the above update command,
 
 #### 3. vscode
 - Install dependencies :
-  ```sudo apt install software-properties-common apt-transport-https wget```
-- Import Microsoft GPG key :
-  ```wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -```
-- Add the VS Code repository :
-  ```sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"```
 
+  ```sudo apt install software-properties-common apt-transport-https wget```
+  
+- Import Microsoft GPG key :
+
+  ```wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -```
+  
+- Add the VS Code repository :
+
+  ```sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"```
+  
 ![vscode-install](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/vscode-install.png)
 
 - Update package lists again : ```sudo apt update```
@@ -100,28 +112,42 @@ Note : If there is an error while executing the above update command,
 ``` curl -sSL https://raw.githubusercontent.com/hyperledger-labs/weft/main/install.sh | sh```
 
 #### 6. Install Docker CE (Community Edition )
-- Remove old versions of docker : ```sudo apt-get remove docker docker-engine docker.io containerd runc```
+- Remove old versions of docker :
+
+  ```sudo apt-get remove docker docker-engine docker.io containerd runc```
+  
 - Update the apt package index and install packages to allow apt to use a repository over HTTPS:
+
+```sudo apt-get update```
+
 ```
-  sudo apt-get update
-  sudo apt-get install \
+sudo apt-get install \
     ca-certificates \
     curl \
     gnupg \
     lsb-release
 ```
+
 - Add Docker’s official GPG key:
-- ```curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg```
+
+```curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg```
+
 - Set up the stable repository:
+
   ```
   echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
   ```
+
 - Update the apt package index, and install the latest version of Docker CE:
+
   ```sudo apt-get update```
+  
   ```sudo apt-get install docker-ce docker-ce-cli containerd.io```
+
 - Verify that Docker CE is installed correctly:
+  
   ```sudo docker run hello-world```
 
 ![hello](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-hello.png)
@@ -132,19 +158,36 @@ Note : If there is an error while executing the above update command,
 
 #### 7. Install Docker Compose
 - Download the current stable release of Docker Compose:
+
 ```sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose```
-- Apply executable permissions to the binary:  ```sudo chmod +x /usr/local/bin/docker-compose```
+
+- Apply executable permissions to the binary:
+
+ ```sudo chmod +x /usr/local/bin/docker-compose```
+
 - Check the version : ```docker-compose --version```
 
 ![docker-compose](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/docker-compose.png)
 
 #### 8. Go Language Installation
-- Download Go : ```wget https://golang.org/dl/go1.17.6.linux-amd64.tar.gz```
-- Extract the archive : ```sudo tar -xvf go1.17.6.linux-amd64.tar.gz```
-- Move the Go binary files to /usr/local : ```sudo mv go /usr/local```
+- Download Go :
+
+  ```wget https://golang.org/dl/go1.17.6.linux-amd64.tar.gz```
+  
+- Extract the archive :
+
+  ```sudo tar -xvf go1.17.6.linux-amd64.tar.gz```
+  
+- Move the Go binary files to /usr/local :
+
+```sudo mv go /usr/local```
+
 - Add Go binary path to the system PATH :
+
   ```echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile```
- 	```source ~/.profile```
+
+  ```source ~/.profile```
+
 - Verify Go installation : ```go version```
 
 ![go-version](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-version.png)
