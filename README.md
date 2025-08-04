@@ -589,5 +589,44 @@ func main() {
 
 ![go-sum](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-sum.png)
 
+
+### Deploy the chaincode on the Terminal-2
+
+**1. Package the chaincode :**
+
+- It is the process of wrapping up the smart contracts in the folder into a packaged chaincode and generate the **tar.gz** file
+
+```peer lifecycle chaincode package mango.tgz --path ./HFN-Mango-Contract/ --lang golang --label mango_1```
+
+**2. Install the chaincode :**
+
+- Run the command : ```peer lifecycle chaincode install mango.tgz```
+
+- Copy the chaincode package identifier starting with ‘mango’ and export it as follows:
+
+```export CC_PACKAGE_ID=mango_1:**f98ede66335798f7aef496bb9044447f93d6413a5123786e08516d0f0ce3234f**```
+
+- **Note :** The package identifier generated may be different, edit it accordingly and export
+
+**3. Approve the Chaincode**
+
+- This stage ensures that all participating organizations agree on the version and content of the chaincode.
+- Execute the below command to approve the chaincode
+  
+```
+peer lifecycle chaincode approveformyorg -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel --name mango --version 1 --sequence 1 --waitForEvent --package-id ${CC_PACKAGE_ID}
+```
+
+**4. Commit the Chaincode**
+
+- This stage ensures that the approved chaincode being added to the channel by the endorsing organization, after which it can be invoked by applications on the channel.
+- Execute the below command to commit the chaincode
+
+```
+peer lifecycle chaincode commit -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel --name mango --version 1 --sequence 1
+```
+
+
+
 =========================================
 
