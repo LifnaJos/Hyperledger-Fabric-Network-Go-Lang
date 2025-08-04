@@ -21,6 +21,10 @@ This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Hono
 - Free disk space: 40 GB
 - High-speed internet connectivity
 
+[Download Latest version of Ubuntu](https://ubuntu.com/download/desktop)
+
+[Install Ubuntu 24.04 LTS](https://www.linuxteck.com/how-to-install-ubuntu-22-04-lts-step-by-step/)
+
 **Note** : If there are any errors detected, please run the commands suggested on the terminal for troubleshooting.
 
 ## Step 1 : Insallation of Packages
