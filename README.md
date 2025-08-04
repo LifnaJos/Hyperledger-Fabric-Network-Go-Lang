@@ -20,6 +20,7 @@ This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Hono
 - RAM: 8GB or higher ( Course is tested in an 8GB machine)
 - Free disk space: 40 GB
 - High-speed internet connectivity
+
 =============================
 [Download Latest version of Ubuntu](https://ubuntu.com/download/desktop)
 
@@ -39,6 +40,7 @@ qemu-system-x86_64 \
   -hda ubuntu24.qcow2
 ```
 ==============================
+
 **Note** : If there are any errors detected, please run the commands suggested on the terminal for troubleshooting.
 
 ## Step 1 : Insallation of Packages
@@ -595,11 +597,16 @@ func main() {
 
 **2. Install the chaincode :**
 
-- Run the command : ```peer lifecycle chaincode install mango.tgz```
+- Run the command :
 
+```peer lifecycle chaincode install mango.tgz```
+
+- Output : 2024-07-16 15:09:00.553 IST 0001 INFO [cli.lifecycle.chaincode] submitInstallProposal -> Installed remotely: response:<status:200 payload:"\nHmango_1:8ebd38bffcf4c843359402af81071b74b321e870304effa088c257ecc7d11c8d\022\007mango_1" > 
+2024-07-16 15:09:00.553 IST 0002 INFO [cli.lifecycle.chaincode] submitInstallProposal -> Chaincode code package identifier: mango_1:8ebd38bffcf4c843359402af81071b74b321e870304effa088c257ecc7d11c8d
+  
 - Copy the chaincode package identifier starting with ‘mango’ and export it as follows:
 
-```export CC_PACKAGE_ID=mango_1:**f98ede66335798f7aef496bb9044447f93d6413a5123786e08516d0f0ce3234f**```
+```export CC_PACKAGE_ID=mango_1:**8ebd38bffcf4c843359402af81071b74b321e870304effa088c257ecc7d11c8d**```
 
 - **Note :** The package identifier generated may be different, edit it accordingly and export
 
@@ -611,6 +618,8 @@ func main() {
 ```
 peer lifecycle chaincode approveformyorg -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel --name mango --version 1 --sequence 1 --waitForEvent --package-id ${CC_PACKAGE_ID}
 ```
+- Output : 2024-07-16 15:11:30.330 IST 0001 INFO [chaincodeCmd] ClientWait -> txid [82c929e58ea0681f9b3fee4e42c8eaeb38724b6b4a0b223c2234c7b0e2dd313b] committed with status (VALID) at producersorgpeer-api.127-0-0-1.nip.io:8080
+
 
 **4. Commit the Chaincode**
 
@@ -620,16 +629,253 @@ peer lifecycle chaincode approveformyorg -o orderer-api.127-0-0-1.nip.io:8080 --
 ```
 peer lifecycle chaincode commit -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel --name mango --version 1 --sequence 1
 ```
+- Output : 2024-07-16 15:14:39.450 IST 0001 INFO [chaincodeCmd] ClientWait -> txid [a61bb6ea896ecf9a46907185e3ba9fd99c970998a758d7535b085ba92b234b78] committed with status (VALID) at producersorgpeer-api.127-0-0-1.nip.io:8080
+
 
 ### Perform the Transactions
-**Transaction Flow in Hyperledger**
+
+**1. Invoke a transaction** : to update the ledger
+- That is to change the data that is associated with an asset.
 
 ![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
 
-1. Invoke a transaction
+**Create an asset**
+a. CreateMango
+  
+```
+peer chaincode invoke -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel -n mango -c '{"function":"CreateMango","Args":["MANGO1","1","mango corp","5000","10000"]}'
+```
+- Output : 2024-07-16 15:17:33.255 IST 0001 INFO [chaincodeCmd] chaincodeInvokeOrQuery -> Chaincode invoke successful. result: status:200
+   
+```
+peer chaincode invoke -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel -n mango -c '{"function":"CreateMango","Args":["MANGO2","2","ibm corp","50","1000"]}'
+```
+- Output : 2024-07-16 15:19:38.637 IST 0001 INFO [chaincodeCmd] chaincodeInvokeOrQuery -> Chaincode invoke successful. result: status:200
 
-2. Query
+b. UpdateMango
+```
+peer chaincode query  -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel -n mango -c '{"function":"UpdateMango","Args":["MANGO2","2","ibm corp","asmi","50","1000"]}'
+```
 
-![query-1]()
+c. DeleteMango
+```
+peer chaincode query  -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel -n mango -c '{"function":"DeleteMango","Args":["MANGO2"]}'
+```
 
-![query-2]()
+**2. Query** : to retrieve information. 
+- There is no data alteration, and it is not recorded in the ledger
+- The data will be retrieved from any of the peers and sent back to the client.
+ 
+![query-1](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/query-1.png)
+
+![query-2](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/query-2.png)
+
+**Retrieve an asset**
+a. ReadMango
+
+```
+peer chaincode query  -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel -n mango -c '{"function":"ReadMango","Args":["MANGO1"]}'
+```
+- Outpu : {"ID":"MANGO1","BatchNumber":1,"Producer":"mango corp","OwnedBy":"mango corp","Quantity":5000,"Price":10000}
+
+```
+peer chaincode query  -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel -n mango -c '{"function":"ReadMango","Args":["MANGO2"]}'
+```
+- Output : {"ID":"MANGO2","BatchNumber":2,"Producer":"ibm corp","OwnedBy":"ibm corp","Quantity":50,"Price":1000}
+
+b. MangoExists
+
+```
+peer chaincode query  -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel -n mango -c '{"function":"MangoExists","Args":["MANGO2"]}'
+```
+- Output : true
+
+```
+peer chaincode query  -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel -n mango -c '{"function":"MangoExists","Args":["MANGO1"]}'
+```
+- Output : true
+
+### Update the Chaincode
+
+- To upgrade the chaincode with more functionalities
+- Add the following code snippet to the mangoContract.go file 
+- **SellMango** : transfer the asset’s ownership status (mango) to the new owner. The three arguments : mango Id, current owner, and new owner.
+- Updated chaincode is as follows:
+  
+```
+package main
+
+import (
+   "encoding/json"
+   "fmt"
+   "github.com/hyperledger/fabric-contract-api-go/contractapi"
+)
+
+type MangoContract struct {
+   contractapi.Contract
+}
+type Mango struct {
+   ID          string  `json:"ID"`
+   BatchNumber int     `json:"BatchNumber"`
+   Producer    string  `json:"Producer"`
+   OwnedBy     string  `json:"OwnedBy"`
+   Quantity    int     `json:"Quantity"`
+   Price       float32 `json:"Price"`
+}
+
+// MangoExists returns true when asset with given ID exists in world state
+func (c *MangoContract) MangoExists(ctx contractapi.TransactionContextInterface, mangoID string) (bool, error) {
+   data, err := ctx.GetStub().GetState(mangoID)
+   if err != nil {
+       return false, err
+   }
+   return data != nil, nil
+}
+
+// CreateMango creates a new instance of Mango
+func (c *MangoContract) CreateMango(ctx contractapi.TransactionContextInterface, mangoID string, batchNumber int,
+   producer string, quantity int, price float32) error {
+   exists, err := c.MangoExists(ctx, mangoID)
+   if err != nil {
+       return fmt.Errorf("Could not read from world state. %s", err)
+   } else if exists {
+       return fmt.Errorf("The asset %s already exists", mangoID)
+   }
+   mango := Mango{
+       ID:          mangoID,
+       BatchNumber: batchNumber,
+       Producer:    producer,
+       OwnedBy:     producer,
+       Quantity:    quantity,
+       Price:       price,
+   }
+   bytes, _ := json.Marshal(mango)
+   return ctx.GetStub().PutState(mangoID, bytes)
+}
+
+// ReadMango retrieves an instance of Mango from the world state
+func (c *MangoContract) ReadMango(ctx contractapi.TransactionContextInterface, mangoID string) (*Mango, error) {
+   exists, err := c.MangoExists(ctx, mangoID)
+   if err != nil {
+       return nil, fmt.Errorf("Could not read from world state. %s", err)
+   } else if !exists {
+       return nil, fmt.Errorf("The asset %s does not exist", mangoID)
+   }
+   bytes, _ := ctx.GetStub().GetState(mangoID)
+   mango := new(Mango)
+   err = json.Unmarshal(bytes, mango)
+   if err != nil {
+       return nil, fmt.Errorf("Could not unmarshal world state data to type Mango")
+   }
+   return mango, nil
+}
+
+// UpdateMango retrieves an instance of Mango from the world state and updates its value
+func (c *MangoContract) UpdateMango(ctx contractapi.TransactionContextInterface, mangoID string, batchNumber int, producer string, owner string, quantity int, price float32) error {
+   exists, err := c.MangoExists(ctx, mangoID)
+   if err != nil {
+       return fmt.Errorf("Could not read from world state. %s", err)
+   } else if !exists {
+       return fmt.Errorf("The asset %s does not exist", mangoID)
+   }
+   mango := Mango{
+       ID:          mangoID,
+       BatchNumber: batchNumber,
+       Producer:    producer,
+       OwnedBy:     owner,
+       Quantity:    quantity,
+       Price:       price,
+   }
+   bytes, _ := json.Marshal(mango)
+   return ctx.GetStub().PutState(mangoID, bytes)
+}
+
+// DeleteMango deletes an instance of Mango from the world state
+func (c *MangoContract) DeleteMango(ctx contractapi.TransactionContextInterface, mangoID string) error {
+   exists, err := c.MangoExists(ctx, mangoID)
+   if err != nil {
+       return fmt.Errorf("Could not read from world state. %s", err)
+   } else if !exists {
+       return fmt.Errorf("The asset %s does not exist", mangoID)
+   }
+   return ctx.GetStub().DelState(mangoID)
+}
+
+func (c *MangoContract) SellMango(ctx contractapi.TransactionContextInterface, mangoID string,
+   owner string, newOwner string) error {
+   exists, err := c.MangoExists(ctx, mangoID)
+   if err != nil {
+       return fmt.Errorf("Could not read from world state. %s", err)
+   } else if !exists {
+       return fmt.Errorf("The asset %s does not exist", mangoID)
+   }
+   mango, _ := c.ReadMango(ctx, mangoID)
+   if mango.OwnedBy == owner {
+       mango.OwnedBy = newOwner
+       bytes, _ := json.Marshal(mango)
+       return ctx.GetStub().PutState(mangoID, bytes)
+   }else{
+       return fmt.Errorf("Assset is not owned by %v, only original owner can sell the asset", owner)
+   }
+      
+}
+
+func main() {
+   mangoContract := new(MangoContract)
+   chaincode, err := contractapi.NewChaincode(mangoContract)
+   if err != nil {
+       panic("Could not create chaincode." + err.Error())
+   }
+   err = chaincode.Start()
+   if err != nil {
+       panic("Failed to start chaincode. " + err.Error())
+   }
+}
+```
+
+### Steps for redeploying the chaincode
+
+**1. Package the chaincode.**
+```
+peer lifecycle chaincode package mango.tgz --path ./KBA-Mango-Contract/ --lang golang --label mango_2
+```
+**Note** : Change the label --> mango_2 in order to distinguish the previous and new chaincode.
+
+**2. Install the chaincode:**
+```
+peer lifecycle chaincode install mango.tgz
+```
+- Output : 2024-07-16 15:37:28.719 IST 0001 INFO [cli.lifecycle.chaincode] submitInstallProposal -> Installed remotely: response:<status:200 payload:"\nHmango_2:706ec13f71ec584ef71a2c5a601718e25ea1cf197037fbb04c2b80780c6bfeb7\022\007mango_2" > 
+2024-07-16 15:37:28.719 IST 0002 INFO [cli.lifecycle.chaincode] submitInstallProposal -> Chaincode code package identifier: mango_2:706ec13f71ec584ef71a2c5a601718e25ea1cf197037fbb04c2b80780c6bfeb7
+
+**Note** : This command generates a new chaincode package id starting with ‘mango’. Export it as an environment variable.
+
+```
+export CC_PACKAGE_ID=mango_2:706ec13f71ec584ef71a2c5a601718e25ea1cf197037fbb04c2b80780c6bfeb7
+```
+
+**3. Approve the chaincode :**
+```
+peer lifecycle chaincode approveformyorg -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel --name mango --version 2 --sequence 2 --waitForEvent --package-id ${CC_PACKAGE_ID}
+```
+- Output : 2024-07-16 15:39:08.603 IST 0001 INFO [chaincodeCmd] ClientWait -> txid [fa848034acf8252a62782a3b73157fc6b4bfeec1177e9f1fa4a9e7b01d27d906] committed with status (VALID) at producersorgpeer-api.127-0-0-1.nip.io:8080
+
+**Note:** Change the sequence and version here to distinguish between the previous chaincode and the upgraded chaincode. 
+
+**4. Commit the chaincode:**
+```
+peer lifecycle chaincode commit -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel --name mango --version 2 --sequence 2
+```
+- Output : 2024-07-16 15:40:30.872 IST 0001 INFO [chaincodeCmd] ClientWait -> txid [0ba504f5734825d9a57afd7b79c1d9f7e1eb6b0419fa775706a49fe1da77f2a0] committed with status (VALID) at producersorgpeer-api.127-0-0-1.nip.io:8080
+
+**5. Invoke the SellMango function** to sell the mango from “mango corp” to “mango shop”
+```
+peer chaincode invoke -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel -n mango -c '{"function":"SellMango","Args":["MANGO1","mango corp","mango shop"]}'
+```
+- Output : 2024-07-16 15:41:46.780 IST 0001 INFO [chaincodeCmd] chaincodeInvokeOrQuery -> Chaincode invoke successful. result: status:200
+
+**6. Invoke the  ReadMango function** to check the owner of mango.
+```
+peer chaincode query  -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel -n mango -c '{"function":"ReadMango","Args":["MANGO1"]}'
+```
+- Output : {"ID":"MANGO1","BatchNumber":1,"Producer":"mango corp","OwnedBy":"mango shop","Quantity":5000,"Price":10000}
