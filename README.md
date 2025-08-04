@@ -124,7 +124,7 @@ Note : If there is an error while executing the above update command,
 
 OR
 
-```npm install -g @hyperledgendary/weftility ```
+```sudo npm install -g @hyperledgendary/weftility ```
 
 ![weft](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/weft.png)
 
@@ -361,12 +361,16 @@ export MICROFAB_CONFIG='{
 
 ### Terminal-2 : Run the Project
 **1. Create a folder :**  ```mkdir HFN-Mango```
+
 **2. Change the directory :** ```cd HFN-Mango```
+
 **3. Generate Certificates, wallet and gateway connection profile :**
 
 ```
 curl -s http://console.127-0-0-1.nip.io:8080/ak/api/v1/components | weft microfab -w ./_wallets -p ./_gateways -m ./_msp -f
 ```
+Note : If there is an error in this command w.r.t weft utility, rerun the code at [Step 5 under Installation](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#5-install-weft-library-using-npm)
+
 ![ca](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/folder-hfn-mango.png)
 
 ![ca](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/ca-wallet-gateway-0.png)
