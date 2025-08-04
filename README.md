@@ -25,6 +25,20 @@ This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Hono
 
 [Install Ubuntu 24.04 LTS](https://www.linuxteck.com/how-to-install-ubuntu-22-04-lts-step-by-step/)
 
+Install Using qemu (simplest CLI-based method)
+```
+sudo apt update
+sudo apt install qemu-system-x86
+qemu-system-x86_64 \
+  -boot d \
+  -cdrom /home/student/Downloads/ubuntu-24.04-desktop-amd64.iso \
+  -m 4096 \
+  -enable-kvm \
+  -cpu host \
+  -smp 2 \
+  -hda ubuntu24.qcow2
+```
+
 **Note** : If there are any errors detected, please run the commands suggested on the terminal for troubleshooting.
 
 ## Step 1 : Insallation of Packages
