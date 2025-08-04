@@ -554,12 +554,23 @@ func main() {
 ``` 
 
 **4. Install all the required external packages**
+- To fetch the github repo for Hyperledger Fabric Contract API :
+
+```go get github.com/hyperledger/fabric-contract-api-go@v1.2.1```
+
 - This command adds all the external packages to **go.mod** file and generates **go.sum** file in the folder
+
 ```go mod tidy```
 
 ![go-tidy](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-tidy.png)
 
+- Updations made to **go.mod** file
+
 ![go-mod](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-mod.png)
+
+- Contents of **go.sum** file
+
+![go-sum](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-sum.png)
 
 =========================================
 
