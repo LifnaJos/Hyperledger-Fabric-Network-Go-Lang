@@ -412,7 +412,7 @@ export CORE_PEER_ADDRESS=sellersorgpeer-api.127-0-0-1.nip.io:8080
 
 ![pro-cmd](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/pro-cmd.png)
    
-**5. Install Binaries for handling Cahincode Lifecycle**
+**5. Install Binaries for handling Chaincode Lifecycle**
 ```
 curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/install-fabric.sh | bash -s -- binary
 ```
@@ -557,6 +557,9 @@ func main() {
 - This command adds all the external packages to **go.mod** file and generates **go.sum** file in the folder
 ```go mod tidy```
 
+![go-tidy](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-tidy.png)
+
+![go-mod](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-mod.png)
 
 =========================================
 
