@@ -16,11 +16,11 @@ This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Hono
 4. [Use-Case Scenario : To trace mangoes](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#step-4-use-case-scenario--to-trace-mangoes)
 
 ## Step 0 : Hardware Prerequisites
-- Operating System: Ubuntu 20.04 or higher
+- Operating System: Ubuntu 24.04 or higher
 - RAM: 8GB or higher ( Course is tested in an 8GB machine)
 - Free disk space: 40 GB
 - High-speed internet connectivity
-
+=============================
 [Download Latest version of Ubuntu](https://ubuntu.com/download/desktop)
 
 [Install Ubuntu 24.04 LTS](https://www.linuxteck.com/how-to-install-ubuntu-22-04-lts-step-by-step/)
@@ -38,7 +38,7 @@ qemu-system-x86_64 \
   -smp 2 \
   -hda ubuntu24.qcow2
 ```
-
+==============================
 **Note** : If there are any errors detected, please run the commands suggested on the terminal for troubleshooting.
 
 ## Step 1 : Insallation of Packages
@@ -320,11 +320,6 @@ export MICROFAB_CONFIG='{
 3. Approve the chaincode definition
 4. Commit the chaincode definition
 
-**Transaction Flow in Hyperledger**
-
-![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
-
-   
 ## Step 4. Use-Case Scenario : To trace mangoes 
 - **Organizations** : PRODUCER and SELLER.
 - **Channel** : Mango Channel
@@ -626,7 +621,15 @@ peer lifecycle chaincode approveformyorg -o orderer-api.127-0-0-1.nip.io:8080 --
 peer lifecycle chaincode commit -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-channel --name mango --version 1 --sequence 1
 ```
 
+### Perform the Transactions
+**Transaction Flow in Hyperledger**
 
+![tx-flow](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/tx-flow.png)
 
-=========================================
+1. Invoke a transaction
 
+2. Query
+
+![query-1]()
+
+![query-2]()
