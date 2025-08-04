@@ -424,11 +424,10 @@ export CORE_PEER_MSPCONFIGPATH=/home/lifna/Desktop/Blockchain-HFN/HFN-Mango/_msp
 export CORE_PEER_ADDRESS=sellersorgpeer-api.127-0-0-1.nip.io:8080
 ```
 
-**4. Set the environment variables for Producer Organization**
-- Copy the export commands for ‘producersorgadmin @ ProducersOrg’
-- Execute them in the terminal.
+**4. Set the environment variables for Producer & Seller Organization**
+- Copy the export commands above and execute them in the terminal.
 
-![pro-cmd](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/pro-cmd.png)
+![pro-cmd](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/path-setting.png)
    
 **5. Install Binaries for handling Chaincode Lifecycle**
 ```
