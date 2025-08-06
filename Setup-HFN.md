@@ -12,7 +12,17 @@
 6. To [set up a small Multi-org based Hyperledger Fabric Network in Go Lang](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Setup-HFN.md#objective---6--setting-up-the-hyperledger-fabric-network)  
 
 ## Objective - 6 : Setting Up the Hyperledger Fabric Network
-### Terminal-1 : Run the Network
+**Steps**
+1. [On Terminal 1, Run the Network on Docker]()
+2. [On Terminal 2, Run the Project to setup environment varaibles and binaries]()
+3. [Open the HFN-Mango Project in VSCode to write samrt contract]()
+4. [On Terminal 2, Deploy the chaincode ]()
+5. [On Terminal 2, Perform the Transactions on the Ledger by invoking & quering the chaincode]()
+6. [On Terminal 2, Update the Chaincode with new functionalities]()
+7. [On Terminal 2, Re-deploy the chaincode]()
+
+       
+### Step - 1 : On Terminal 1 Run the Network on Docker
 **1. Copy the below export command and execute it in a command terminal**
 
 ```
@@ -45,7 +55,7 @@ export MICROFAB_CONFIG='{
 
 ![run-microfab](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/run-microfab-3.png)
 
-### Terminal-2 : Run the Project
+### Step - 2 : On Terminal 2 Run the Project to setup the environment variables and binaries
 **1. Create a folder :**  ```mkdir HFN-Mango```
 
 **2. Change the directory :** ```cd HFN-Mango```
@@ -113,7 +123,7 @@ export FABRIC_CFG_PATH=${PWD}/config
 ```
 ![path](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/path.png)
 
-### Open the HFN-Mango Project in VSCode
+### Step - 3 : Open the HFN-Mango Project in VSCode to write smart contract 
 
 ![prjt-open](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/vs-1.png)
 
@@ -258,7 +268,7 @@ func main() {
 ![go-sum](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/go-sum.png)
 
 
-### Deploy the chaincode on the Terminal-2
+### Step - 4 : On Terminal 2, Deploy the chaincode
 
 **1. Package the chaincode :**
 
@@ -303,7 +313,7 @@ peer lifecycle chaincode commit -o orderer-api.127-0-0-1.nip.io:8080 --channelID
 - Output : 2024-07-16 15:14:39.450 IST 0001 INFO [chaincodeCmd] ClientWait -> txid [a61bb6ea896ecf9a46907185e3ba9fd99c970998a758d7535b085ba92b234b78] committed with status (VALID) at producersorgpeer-api.127-0-0-1.nip.io:8080
 
 
-### Perform the Transactions
+### Step - 5 : On Terminal 2, Perform the Transactions on the Ledger by invoking & quering the chaincode
 
 **1. Invoke a transaction** : to update the ledger
 - That is to change the data that is associated with an asset.
@@ -366,7 +376,7 @@ peer chaincode query  -o orderer-api.127-0-0-1.nip.io:8080 --channelID mango-cha
 ```
 - Output : true
 
-### Update the Chaincode
+### Step - 6 : On Terminal 2, Update the Chaincode with new functionalities
 
 - To upgrade the chaincode with more functionalities
 - Add the following code snippet to the mangoContract.go file 
@@ -504,7 +514,7 @@ func main() {
 }
 ```
 
-### Steps for redeploying the chaincode
+### Step - 7 : On Terminal 2, Re-deploy the chaincode
 
 **1. Package the chaincode.**
 ```
