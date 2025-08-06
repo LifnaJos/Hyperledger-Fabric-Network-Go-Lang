@@ -1,6 +1,7 @@
 # Hyperledger-Fabric-Network-Go-Lang-(Setup-HFN)
 #### Acknowledgements
-This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Honor-Minor Degree Course / Semester 7 Lab) offered by Department of Computer Engineering to the Final year students of VES Institute of Technology, Mumbai (An Autonomous Institute, Affiliated with the University of Mumbai)) during the Academic Year 2025-26. The content is prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) 
+- This Github repo, is prepared as a part of Blockchain Setup Lab (Blockchain Honor-Minor Degree Course / Semester 7 Lab) offered by Department of Computer Engineering to the Final year students of VES Institute of Technology, Mumbai (An Autonomous Institute, Affiliated with the University of Mumbai)) during the Academic Year 2025-26.
+- This content is prepared on the basis of the Course offered by [Kerala Blockchain Academy (KBA)](https://kba.ai/) : [Hyperledger Fabric Fundamentals (Go Lang)](https://learn.kba.ai/course/hyperledger-fabric-fundamentals-golang/) 
 
 ## **Objective** : 
 1. To understand the [hardware pre-requisites for setting up a Hyperledger Fabric Network](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#step-0--hardware-prerequisites)
