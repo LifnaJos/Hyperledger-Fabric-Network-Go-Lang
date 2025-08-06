@@ -15,7 +15,7 @@
 **Steps**
 1. [On Terminal 1, Run the Network on Docker](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Setup-HFN.md#step---1--on-terminal-1-run-the-network-on-docker)
 2. [On Terminal 2, Run the Project to setup environment varaibles and binaries](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Setup-HFN.md#step---2--on-terminal-2-run-the-project-to-setup-the-environment-variables-and-binaries)
-3. [Open the Project in VSCode to write samrt contract](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Setup-HFN.md#step---3--open-the-hfn-mango-project-in-vscode-to-write-smart-contract)
+3. [Open the Project in VSCode to write smart contract](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Setup-HFN.md#step---3--open-the-hfn-mango-project-in-vscode-to-write-smart-contract)
 4. [On Terminal 2, Deploy the chaincode ](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Setup-HFN.md#step---4--on-terminal-2-deploy-the-chaincode)
 5. [On Terminal 2, Perform the Transactions on the Ledger by invoking & quering the chaincode](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Setup-HFN.md#step---5--on-terminal-2-perform-the-transactions-on-the-ledger-by-invoking--quering-the-chaincode)
 6. [On Terminal 2, Update the Chaincode with new functionalities](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Setup-HFN.md#step---6--on-terminal-2-update-the-chaincode-with-new-functionalities)
