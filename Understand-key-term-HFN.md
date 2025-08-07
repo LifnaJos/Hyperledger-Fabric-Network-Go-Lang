@@ -53,3 +53,7 @@
 **Note** : Transactions are visible only to the participating organizations : PRODUCER and SELLER.
   
 ![Network](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Network.png)
+
+## Objective - 5 : [Use-Case Scenario : To trace mangoes](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Understand-key-term-HFN.md#objective---5--use-case-scenario--to-trace-mangoes)
+
+## Objective - 6 : [Setting Up the Hyperledger Fabric Network](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Setup-HFN.md#objective---6--setting-up-the-hyperledger-fabric-network)
