@@ -16,7 +16,7 @@ Source :
 6. To [set up a small Multi-org based Hyperledger Fabric Network in Go Lang](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang/blob/main/Setup-HFN.md#objective---6--setting-up-the-hyperledger-fabric-network)  
 
 ## Objective - 1 : Hardware Prerequisites for setting up a Hyperledger Fabric Network
-- Operating System: Ubuntu 24.04 or higher
+- Operating System: Ubuntu 24.04 or higher [Steps to upgrade from Ubuntu 20.04 to 24.04 LTS](https://www.tecmint.com/upgrade-ubuntu-20-04-to-24-04/)
 - RAM: 8GB or higher ( Course is tested in an 8GB machine)
 - Free disk space: 40 GB
 - High-speed internet connectivity
@@ -34,7 +34,7 @@ Source :
 8. [Go compiler](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#8-go-language-installation)
 9. [Add user to the Docker group](https://github.com/LifnaJos/Hyperledger-Fabric-Network-Go-Lang#9-add-user-to-the-docker-group)
 
-On the Terminal of Ubuntu 20.04 LTS
+On the Terminal of Ubuntu 24.04 LTS
 - Current working directory : ```pwd```
 - Change the directory : ```cd Desktop```
 - List the files in directory : ```ls```
